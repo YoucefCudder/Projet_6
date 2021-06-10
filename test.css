@@ -77,7 +77,7 @@ div.slider {
 
 /* modale*/
 
-.slidercontent {
+#best, #cat1, #cat2, #cat3 {
     display: flex;
     -ms-overflow-style: touch;
     overflow-x: auto;
