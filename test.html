@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="test.css" />
+        <title>JustSreamIt</title>
+    </head>
+
+    <body>
+        <header>
+        <h1><a href="test.html">JustSreamIt</a></h1>
+
+        <nav>
+            <ul id="Menu">
+            <li><a href="test.html">Accueil</a></li>
+            <li><a href="#sliders">Catégories</a></li>
+            </ul>
+        </nav>
+        
+        </header>
+
+        <div id="best-movie">
+            <img src="template-movie.png" alt="jacket best movie">
+            <h2 id="best-title">Titre</h2>
+            <p id="best-desc">null</p>
+            
+        </div>
+        
+        <div id="sliders">
+            <a href="#sliders" class="arrow down">&#8249;</a>
+
+            <h3>Top des meilleurs films</h3>
+            <div id="best" class="movies slider">
+              <div class="arrow left" onclick="moveRight('best')">&#8249;</div>
+              <div class="arrow right" onclick="moveLeft('best')">&#8250;</div>
+  
+  
+                <div class="slidercontent">
+                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
+                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
+                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
+                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
+                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
+                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
+                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
+           
+        <script> src="test.js"</script>
+ 
+        </div>
+    </body>
+</html>

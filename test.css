@@ -1,0 +1,100 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(5, 5, 5);
+    color: rgb(114, 6, 6);
+    overflow-x: hidden;
+    margin: 0;
+    overflow-y: visible;
+
+}
+
+/* liens de naviguation */
+
+nav ul
+{
+    list-style-type: none;
+    display: flex; 
+    margin-bottom: 10px;
+    margin-right: auto;
+    
+}
+
+nav li
+{
+    margin-right: 15px;
+}
+
+nav a
+{
+    font-size: vw;
+    color: rgb(255, 255, 255);
+    padding-bottom: 0%;
+    text-decoration: rgb(90, 0, 0);
+}
+
+header {
+
+    position: relative;
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background-image: linear-gradient(#7e010194, transparent);
+    height: 12%;
+}
+
+div.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    filter: none;
+}
+
+#sliders {
+    margin: 30px;
+}
+
+#sliders h3 {
+    font-size: 1.5vw;
+    margin-bottom: 2px;
+}
+
+div.slider {
+    width: 100%;
+    overflow: visible;
+    transition: 1s;
+    text-indent: 0;
+    white-space: nowrap;
+    position: relative;
+    
+}
+
+
+
+/* modale*/
+
+.sliders {
+    display: flex;
+    -ms-overflow-style: touch;
+    overflow-x: auto;
+    scroll-snap-type: both mandatory;
+  }
+  
+.container {
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    padding: .5rem;
+    scroll-snap-align: start;
+    transition: width 0.3s ease-out 0.15s;
+    width: 50%;
+  }
+  
+  img {
+    width: 50%;
+  }
+  
