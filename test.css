@@ -77,14 +77,14 @@ div.slider {
 
 /* modale*/
 
-.sliders {
+.slidercontent {
     display: flex;
     -ms-overflow-style: touch;
     overflow-x: auto;
     scroll-snap-type: both mandatory;
   }
   
-.container {
+.movie_item {
     align-items: center;
     display: flex;
     flex: 0 0 auto;
