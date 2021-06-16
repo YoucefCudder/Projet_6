@@ -2,12 +2,12 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8" />
-        <link rel="stylesheet" href="test.css" />
         <title>JustSreamIt</title>
     </head>
 
     <body>
         <header>
+
         <h1><a href="test.html">JustSreamIt</a></h1>
 
         <nav>
@@ -19,18 +19,34 @@
         
         </header>
 
-        <div id="best-movie">
-            <img src="template-movie.png" alt="jacket best movie">
-            <h2 id="best-title">Titre</h2>
-            <p id="best-desc">null</p>
+        <div id="Modal">
+            <img src="template-movie.png" alt="jacket best movie" id="best_img">
+            <h2 id="best_title">Titre</h2>
+            <p id="best_desc">null</p>
             
         </div>
         
-        <div id="sliders">
-            <a href="#sliders" class="arrow down">&#8249;</a>
+        <div id="carousel">
+            <a href="#carousel" class="arrow down">&#8249;</a>
 
     <h3>Top des meilleurs films</h3>
-        <div id="best" class="moviesslider">
+        <div id="best" class="best_movies_carousel"></div>
+        <div class="arrow left" onclick="moveRight('best')">&#8249;</div>
+        <div class="arrow right" onclick="moveLeft('best')">&#8250;</div>
+  
+  
+        <div class="contenu_carousel">
+            <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
+            <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
+            <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
+            <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
+            <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
+            <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
+            <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
+        </div>
+    
+    <h3>Catégorie 1</h3>
+        <div id="cat1" class="movies_carousel">
         <div class="arrow left" onclick="moveRight('best')">&#8249;</div>
         <div class="arrow right" onclick="moveLeft('best')">&#8250;</div>
   
@@ -43,21 +59,8 @@
             <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
             <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
             <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-
-        <h3>Catégorie 1</h3>
-            <div id="cat1" class="moviesslider">
-              <div class="arrow left" onclick="moveRight('best')">&#8249;</div>
-              <div class="arrow right" onclick="moveLeft('best')">&#8250;</div>
-  
-  
-                <div class="slidercontent">
-                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
+            </div>
+        </div>
         
         <h3>Catégorie 2</h3>
             <div id="cat2" class="moviesslider">
@@ -88,8 +91,8 @@
                 <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
                 <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
                 <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-        <script> src="test.js"</script>
- 
+                
         </div>
+        <script>src="test.js"</script>
     </body>
 </html>

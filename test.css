@@ -14,6 +14,14 @@ html {
 
 /* liens de naviguation */
 
+h1 {
+    padding: auto;
+    overflow-y: auto;
+    color: rgb(255, 255, 255);
+    grid-template: auto;
+
+}
+
 nav ul
 {
     list-style-type: none;
