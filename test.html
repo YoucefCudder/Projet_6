@@ -2,97 +2,130 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8" />
+        <link rel="stylesheet" href="test.css" />
         <title>JustSreamIt</title>
+       
     </head>
+
 
     <body>
         <header>
 
-        <h1><a href="test.html">JustSreamIt</a></h1>
+            <h1><a href="test.html">JustSreamIt</a></h1>
 
-        <nav>
-            <ul id="Menu">
-            <li><a href="test.html">Accueil</a></li>
-            <li><a href="#sliders">Catégories</a></li>
-            </ul>
-        </nav>
-        
-        </header>
-
-        <div id="Modal">
-            <img src="template-movie.png" alt="jacket best movie" id="best_img">
-            <h2 id="best_title">Titre</h2>
-            <p id="best_desc">null</p>
+            <nav>
+                <ul id="Menu">
+                <li><a href="test.html">Accueil</a></li> 
+                <li><a href="#sliders">Catégories</a></li>
+                </ul>
+            </nav>
             
-        </div>
-        
-        <div id="carousel">
-            <a href="#carousel" class="arrow down">&#8249;</a>
-
-    <h3>Top des meilleurs films</h3>
-        <div id="best" class="best_movies_carousel"></div>
-        <div class="arrow left" onclick="moveRight('best')">&#8249;</div>
-        <div class="arrow right" onclick="moveLeft('best')">&#8250;</div>
-  
-  
-        <div class="contenu_carousel">
-            <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-            <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-            <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-            <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-            <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-            <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-            <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-        </div>
-    
-    <h3>Catégorie 1</h3>
-        <div id="cat1" class="movies_carousel">
-        <div class="arrow left" onclick="moveRight('best')">&#8249;</div>
-        <div class="arrow right" onclick="moveLeft('best')">&#8250;</div>
-  
-  
-            <div class="slidercontent">
-            <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-            <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-            <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-            <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-            <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-            <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-            <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-            </div>
-        </div>
-        
-        <h3>Catégorie 2</h3>
-            <div id="cat2" class="moviesslider">
-              <div class="arrow left" onclick="moveRight('best')">&#8249;</div>
-              <div class="arrow right" onclick="moveLeft('best')">&#8250;</div>
-  
-  
-                <div class="slidercontent">
-                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-           
-        <h3>Catégorie 3</h3>
-            <div id="cat3" class="moviesslider">
-              <div class="arrow left" onclick="moveRight('best')">&#8249;</div>
-              <div class="arrow right" onclick="moveLeft('best')">&#8250;</div>
-  
-  
-                <div class="slidercontent">
-                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
-                <div class="movie_item"><img src="template-movie.png" alt="movie jacket" onclick=""></div>
+        </header>
+        <section>
+            <div id="Modal">
+                <img src="template-movie.png" alt="jacket best movie" id="best_img">
+                <h2 id="best_title">Titre</h2>
+                <p id="best_desc">null</p>
                 
-        </div>
-        <script>src="test.js"</script>
+            </div>
+
+            <h3>Top des meilleurs films</h3>
+            <div class="carousel">
+                <div class="carouselbox">
+                  <!-- Random Data will come here  -->
+
+
+                    <div class="movie_item" id="btn_best1"><img src="template-movie.png" alt="movie jacket1"></div>
+                    <div class="movie_item" id="btn_best2"><img src="template-movie.png" alt="movie jacket2"></div>
+                    <div class="movie_item" id="btn_best3"><img src="template-movie.png" alt="movie jacket3"></div>
+                    <div class="movie_item" id="btn_best3"><img src="template-movie.png" alt="movie jacket4"></div>
+                    <div class="movie_item" id="btn_best4"><img src="template-movie.png" alt="movie jacket5"></div>
+                    <div class="movie_item" id="btn_best5"><img src="template-movie.png" alt="movie jacket6"></div>
+                    <div class="movie_item" id="btn_best6"><img src="template-movie.png" alt="movie jacket7"></div>
+                
+                <a class="switchLeft sliderButton" onclick="sliderScrollLeft()"><button type="button" id="moveLeft" class="btn-nav">
+                        ᐊ</button></a>
+                <a class="switchRight sliderButton" onclick="sliderScrollRight()"><button type="button" id="moveRight" class="btn-nav">
+                        ᐅ</button></a>       
+               
+                </div>
+            </div>
+            
+   
+               
+           
+          
+        
+            <h3>Comédie</h3>
+            <div class="carousel">
+                <div class="carouselbox">
+                  <!-- Random Data will come here  -->
+
+
+                    <div class="movie_item" id="btn_com1"><img src="template-movie.png" alt="movie jacket1"></div>
+                    <div class="movie_item" id="btn_com2"><img src="template-movie.png" alt="movie jacket2"></div>
+                    <div class="movie_item" id="btn_com3"><img src="template-movie.png" alt="movie jacket3"></div>
+                    <div class="movie_item" id="btn_com4"><img src="template-movie.png" alt="movie jacket4"></div>
+                    <div class="movie_item" id="btn_com5"><img src="template-movie.png" alt="movie jacket5"></div>
+                    <div class="movie_item" id="btn_com6"><img src="template-movie.png" alt="movie jacket6"></div>
+                    <div class="movie_item" id="btn_com7"><img src="template-movie.png" alt="movie jacket7"></div>
+                
+                <a class="switchLeft sliderButton" onclick="sliderScrollLeft()"><button type="button" id="moveLeft" class="btn-nav">
+                        ᐊ</button></a>
+                <a class="switchRight sliderButton" onclick="sliderScrollRight()"><button type="button" id="moveRight" class="btn-nav">
+                        ᐅ</button></a>       
+               
+                </div>
+            </div>
+            
+
+            <h3>Horreur</h3>
+            <div class="carousel">
+                <div class="carouselbox">
+                  <!-- Random Data will come here  -->
+
+                    <div class="movie_item" id="btn_hor1"><img id="horror1" src="template-movie.png" alt="movie jacket1"></div>
+                    <div class="movie_item" id="btn_hor2"><img id="horror2" src="template-movie.png" alt="movie jacket2"></div>
+                    <div class="movie_item" id="btn_hor3"><img id="horror3" src="template-movie.png" alt="movie jacket3"></div>
+                    <div class="movie_item" id="btn_hor4"><img id="horror4" src="template-movie.png" alt="movie jacket4"></div>
+                    <div class="movie_item" id="btn_hor5"><img id="horror5" src="template-movie.png" alt="movie jacket5"></div>
+                    <div class="movie_item" id="btn_hor6"><img id="horror6" src="template-movie.png" alt="movie jacket6"></div>
+                    <div class="movie_item" id="btn_hor7"><img id="horror7" src="template-movie.png" alt="movie jacket7"></div>
+                    <a class="switchLeft sliderButton" onclick="sliderScrollLeft()"><button type="button" id="moveLeft" class="btn-nav">
+                        ᐊ
+                    </button></a>
+                    <a class="switchRight sliderButton" onclick="sliderScrollRight()"><button type="button" id="moveRight" class="btn-nav">
+                        ᐅ
+                    </button></a>       
+               
+               
+                </div>
+            </div>
+
+
+            <h3>Action</h3>
+
+    
+            <div class="carousel">
+                <div class="carouselbox">
+                  <!-- Random Data will come here  -->
+                    <div class="movie_item" id="btn_act1"><img id="action1"src="template-movie.png" alt="movie jacket1"></div>
+                    <div class="movie_item" id="btn_act2"><img id="action2"src="template-movie.png" alt="movie jacket2"></div>
+                    <div class="movie_item" id="btn_act3"><img id="action3"src="template-movie.png" alt="movie jacket3"></div>
+                    <div class="movie_item" id="btn_act4"><img id="action4"src="template-movie.png" alt="movie jacket4"></div>
+                    <div class="movie_item" id="btn_act5"><img id="action5"src="template-movie.png" alt="movie jacket5"></div>
+                    <div class="movie_item" id="btn_act6"><img id="action6"src="template-movie.png" alt="movie jacket6"></div>
+                    <div class="movie_item" id="btn_act7"><img id="action7"src="template-movie.png" alt="movie jacket7"></div>
+                    <a class="switchLeft sliderButton" onclick="sliderScrollLeft()"><button type="button" id="moveLeft" class="btn-nav">
+                        ᐊ
+                    </button></a>
+                    <a class="switchRight sliderButton" onclick="sliderScrollRight()"><button type="button" id="moveRight" class="btn-nav">
+                        ᐅ
+                    </button></a>   
+               
+                </div>
+            </div>
+         <script src="test.js"></script>
+        </section>
     </body>
 </html>
