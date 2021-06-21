@@ -3,10 +3,10 @@ var best_img = document.getElementById("best_img");
 var best_title = document.getElementById("best_title");
 var best_desc = document.getElementById("best_desc");
 var liste_best = [
-  document.getElementById("btn_best1"), document.getElementById("btn_best2"),
-  document.getElementById("btn_best3"), document.getElementById("btn_best4"),
-  document.getElementById("btn_best5"), document.getElementById("btn_best6"),
-  document.getElementById("btn_best7")
+  document.getElementById("best1"), document.getElementById("best2"),
+  document.getElementById("best3"), document.getElementById("best4"),
+  document.getElementById("best5"), document.getElementById("best6"),
+  document.getElementById("best7")
 ];
 
 function fetch_top(url_best) {
@@ -27,7 +27,7 @@ function fetch_top(url_best) {
   .catch(error => {console.log("probleme fetch" + error.message)});
 }
 
-function fetch_cat(url, l_best) {
+function fetch_cat(url, liste_best) {
   fetch(url).then(resp => {
     if(resp.ok){
       resp.json().then(data => {
@@ -39,15 +39,18 @@ function fetch_cat(url, l_best) {
           resp.json().then(data => {
           for (let nb = 0; nb < 2; nb++) {
             liste_best[nb+5].src = data.results[nb].image_url;
-            list_best[nb+5].innerHTML = data.results[nb].url}
-        })
-        } else {console.log("bad network response")};
+            liste_best[nb+5].innerHTML = data.results[nb].url}
+          // then
+         // liste catégorie liste_comédie[nb+5].src = data.results[nb].image_url;
+         //etc ????????
+          })
+        } else {console.log("probleme reponse url")};
       })
-      .catch(function(error) {console.log("fetch operation problem" + error.message)});
+      .catch(function(error) {console.log("probleme reponse fetch" + error.message)});
     })
   } else {console.log("bad network response")};
   })
-  .catch(function(error) {console.log("fetch operation problem" + error.message)});
+  .catch(function(error) {console.log("probleme reponse fetch" + error.message)});
 }
 
 fetch_top(url_best);
