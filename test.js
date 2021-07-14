@@ -1,3 +1,13 @@
+/* --- MODAL --- */
+document.getElementById("open-popup-btn").addEventListener("click",function(){
+  document.getElementsByClassName("popup")[0].classList.add("active");
+});
+ 
+document.getElementById("dismiss-popup-btn").addEventListener("click",function(){
+  document.getElementsByClassName("popup")[0].classList.remove("active");
+});
+
+/* --- FETCH --- */
 var best_img = document.getElementById("best_img");
 var best_title = document.getElementById("best_title");
 var best_desc = document.getElementById("best_desc");
@@ -85,58 +95,5 @@ fetch_cat(url_com, liste_cat1);
 fetch_cat(url_hor, liste_cat2);
 fetch_cat(url_act, liste_cat3);
 
-function print_info(url_best) {
-  modal.style.display = "block";
-  fetch(url.innerHTML).then(resp => {
-    if(resp.ok){
-      resp.json().then(data => {
-        id_image_url.src = data.image_url;
-        id_title.innerHTML = data.original_title;
-        id_genres.innerHTML = "<b>Genre(s) : </b>" + data.genres;
-        id_date_published.innerHTML = "<b>Date de sortie : </b>" + data.date_published;
-        id_rated.innerHTML = "<b>Restriction : </b>" + data.rated;
-        if (id_rated.innerHTML == "<b>Restriction : </b>Not rated or unkown rating");
-          {id_rated.innerHTML = "<b>Tous public</b>"};
-        id_imdb_score.innerHTML = "<b>Score IMDB : </b>" + data.imdb_score;
-        id_directors.innerHTML = "<b>Réalisateur(s) : </b>" + data.directors;
-        id_actors.innerHTML = "<br><b>Acteur(s) : </b>" + data.actors;
-        id_duration.innerHTML = "<b>Durée : </b>" + data.duration + " min";
-        id_countries.innerHTML = "<b>Pays d'origine : </b>" + data.countries;
-        id_worldwide_gross_income.innerHTML = "<b>Résultat au Box Office : </b>" + data.worldwide_gross_income + " $";
-        if (id_worldwide_gross_income.innerHTML == "<b>Résultat au Box Office : </b>null $");
-          {id_worldwide_gross_income.innerHTML = "<b>Résultat au Box Office : </b>inconnu"};
-        id_description.innerHTML = "<b>Résumé du film : </b>" + data.long_description;
-      })
-    } else {console.log("bad network response")};
-  })
-  .catch(function(error) {console.log("fetch operation problem" + error.message)});
-}
 
-const gap = 7;
 
-const container = document.getElementById("container"),
-content = document.getElementById("content"),
-next = document.getElementById("next"),
-prev = document.getElementById("prev");
-
-next.addEventListener("click", e => {
-  container.scrollBy(width + gap, 0);
-  if (container.scrollWidth !== 0) {
-    prev.style.display = "flex";
-  }
-  if (content.scrollWidth - width - gap <= container.scrollLeft + width) {
-    next.style.display = "none";
-  }
-});
-prev.addEventListener("click", e => {
-  container.scrollBy(-(width + gap), 0);
-  if (container.scrollLeft - width - gap <= 0) {
-    prev.style.display = "none";
-  }
-  if (!content.scrollWidth - width - gap <= container.scrollLeft + width) {
-    next.style.display = "flex";
-  }
-});
-
-let width = container.offsetWidth;
-window.addEventListener("resize", e => (width = container.offsetWidth));
