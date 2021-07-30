@@ -1,18 +1,9 @@
-/* --- MODAL --- */
-document.getElementById("open-popup-btn").addEventListener("click",function(){
-  document.getElementsByClassName("popup")[0].classList.add("active");
-});
- 
-document.getElementById("dismiss-popup-btn").addEventListener("click",function(){
-  document.getElementsByClassName("popup")[0].classList.remove("active");
-});
-
 /* --- FETCH --- */
 var best_img = document.getElementById("best_img");
 var best_title = document.getElementById("best_title");
 var best_desc = document.getElementById("best_desc");
 
-function fetch_best(url_best) {
+async function fetch_best(url_best) {
   fetch(url_best).then(resp => {
     if(resp.ok){
       resp.json().then(data => {

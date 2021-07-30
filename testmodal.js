@@ -1,45 +1,25 @@
-/* --- MODAL --- */
-document.getElementById("open-popup-btn").addEventListener("click",function(){
-    document.getElementsByClassName("popup")[0].classList.add("active");
-});
-   
-document.getElementById("dismiss-popup-btn").addEventListener("click",function(){
-    document.getElementsByClassName("popup")[0].classList.remove("active");
-});
+// Get the modal
+var modal = document.getElementsByClassName("modal");
 
+// Get the button that opens the modal
+var btn = document.querySelectorAll("carousel__item");
 
-const btn_best = [document.getElementById("btn_best1"), document.getElementById("btn_best2"), 
-                document.getElementById("btn_best3"),document.getElementById("btn_best4"), 
-                document.getElementById("btn_best5"), document.getElementById("btn_best6"),
-                document.getElementById("btn_best7")
-];
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close-btn");
 
-var id_image_url  = document.getElementById("id_image_url");
-var id_title  = document.getElementById("id_title");
-var id_genres  = document.getElementById("id_genres");
-var id_date_published  = document.getElementById("id_date_published");
-var id_rated  = document.getElementById("id_rated");
-var id_imdbscore  = document.getElementById("id_imdbscore");
-
-
-
-function print_modal_info(url_best) {
-    modal.style.display = "block";
-    fetch(url_best.innerHTML).then(resp => {
-      if(resp.ok){
-        resp.json().then(data => {
-          id_image_url.src = data.image_url;
-          id_title.innerHTML = data.original_title;
-          id_genres.innerHTML = data.genres;
-          id_date_published.innerHTML = data.date_published;
-          id_rated.innerHTML = data.rated;
-          id_imdbscore.innerHTML = data.imdb_score;
-        })
-    } else {console.log("probleme de reponse")};
-  })
-  .catch(function(error) {console.log("probleme lors de l'operation fetch" + error.message)});
+// When the user clicks on the button, open the modal
+var elems = document.getElementsByClassName('carousel__item');
+for (var i=0;i<elems.length;i+=1){
+  elems[i].style.display = 'block';
+}
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
 }
 
-
-
-
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
