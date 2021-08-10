@@ -1,7 +1,6 @@
 $itemGrow: 1.2;
 $duration: 250ms;
 
-
 html {
   scroll-behavior: smooth;
 }
@@ -17,52 +16,146 @@ h1 {
   text-align: center;
 }
 
-.carousel {
-  display: grid;
-  grid-template-columns: repeat(3,100%);
-  overflow:hidden;
-  scroll-behavior: smooth;
-
-  section {
-    width: 100%;
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(5, auto);
-    margin: 20px 0;
-    
-    .item {
-      padding: 0 2px;
-      transition: $duration all;
-      
-      &:hover { 
-        margin: 0 40px;
-        transform: scale(1.2);
-      }
-      
-    }
-    
-    a {
-      position: absolute;
-      color: #fff;
-      text-decoration: none;
-      font-size: 6em;
-      background:rgb(0,0,0);
-      width: 80px;
-      padding: 20px;
-      text-align: center;
-      z-index: 1;
-      
-      &:nth-of-type(1) {
-        top:0; bottom:0; left:0;
-        background: linear-gradient(-90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
-      }
-      &:nth-of-type(2) {
-        top:0; bottom:0; right: 0;
-        background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
-      }
-      
-    }
-    
-  }
+h3 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: rgb(243, 239, 239);
+  width: 5em;
 }
 
+.carousel {
+  width: 100%;
+  max-width: 964px;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.carousel__container {
+  overflow: auto;
+  scroll-behavior: smooth;
+}
+
+.carousel__container::-webkit-scrollbar {
+  height: 0;
+}
+
+.buttonnext,
+.buttonprev {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: white;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  outline: 0;
+  cursor: pointer;
+  position: absolute;
+}
+
+.buttonprev {
+  top: 50%;
+  left: 0;
+  transform: translate(50%, -50%);
+  display: none;
+}
+
+.buttonnext {
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+}
+
+.content {
+  display: grid;
+  grid-gap: 16px;
+  grid-auto-flow: column;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+}
+
+.modal-content {
+  position: relative;
+  background-color: white;
+  padding: 20px;
+  margin: auto;
+  width: 75%;
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+.close-btn {
+  /* The Close Button */
+
+  color: white;
+  float: right;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+// /* Add Animation */
+// @-webkit-keyframes slideIn {
+//   from {
+//     bottom: -300px;
+//     opacity: 0;
+//   }
+//   to {
+//     bottom: 0;
+//     opacity: 1;
+//   }
+// }
+
+// @keyframes slideIn {
+//   from {
+//     bottom: -300px;
+//     opacity: 0;
+//   }
+//   to {
+//     bottom: 0;
+//     opacity: 1;
+//   }
+// }
+
+// @-webkit-keyframes fadeIn {
+//   from {
+//     opacity: 0;
+//   }
+//   to {
+//     opacity: 1;
+//   }
+// }
+
+// @keyframes fadeIn {
+//   from {
+//     opacity: 0;
+//   }
+//   to {
+//     opacity: 1;
+//   }
+// }
