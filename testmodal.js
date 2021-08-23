@@ -2,17 +2,24 @@
 
 var modal = document.querySelector(".modal");
 var closebtn = document.querySelector(".close-btn");
-var element = document.getElementsByClassName(".carousel__item");
-for(var i = 0; i < element.length; i = i + 1) {
-  modal.style.display="block";
-}
-  
+
 
 
 var id_image_url  = document.getElementById("id_image_url");
 var id_title  = document.getElementById("id_title");
 var id_genres  = document.getElementById("id_genres");
+var id_date_published = document.getElementById("id_date_published");
+var id_rated = document.getElementById("id_rated");
+var id_imdb_score = document.getElementById("id_imdbscore");
+var id_directors  = document.getElementById("id_directors");
+var id_actors  = document.getElementById("id_actors");
+var id_duration  = document.getElementById("id_duration");
+var id_countries  = document.getElementById("id_countries");
+var id_worldwide_gross_income  = document.getElementById("id_worldwide_gross_income");
+var id_description  = document.getElementById("id_description");
+
 var best_modal = document.getElementById("best_modal");
+
 
 var btn_best = [document.getElementById("btn_best1"), document.getElementById("btn_best2"), 
                 document.getElementById("btn_best3"),document.getElementById("btn_best4"), 
@@ -20,15 +27,20 @@ var btn_best = [document.getElementById("btn_best1"), document.getElementById("b
                 document.getElementById("btn_best7")
 ];
 
+const elements = document.getElementsByClassName("carousel__item");
 
-best_modal.onclick = function() {print_modal_info(best1)};
-for (let nb in btn_best) {
-  btn_best[nb].onclick = function() {
-    if (liste_best[nb]) {
-      print_modal_info(liste_best[nb])
+// Modale + data attributes
 
-}}}
+best_modal.onclick = function(event) {print_modal_info("http://localhost:8000/api/v1/titles/" + target.dataset.idmovie)};
 
+
+
+for (const element of elements) {
+  element.onclick = function(event) {
+    print_modal_info("http://localhost:8000/api/v1/titles/" + event.target.dataset.idmovie)
+
+  }
+}
 // fonction pour fermer la fenêtre avec le  boutton
 closebtn.onclick = function() {
   modal.style.display = "none";
@@ -41,19 +53,32 @@ window.onclick = function(event) {
   }
 }
 
-
+// fonction pour récupérer les informations des films dans la fenêtre modale
 function print_modal_info(url_best) {
   modal.style.display = "block";
+  console.log(url_best)
   fetch(url_best).then(resp => {
     if(resp.ok){
       resp.json().then(data => {
         id_image_url.src = data.image_url;
-        id_title.innerHTML = data.original_title;
-        id_genres.innerHTML = data.genres;
+        id_title.innerHTML = "Titre : " + data.original_title;
+        id_genres.innerHTML = "Genre : " + data.genres;
+        id_date_published.innerHTML = "Date : " +  data.date_published;
+        id_rated.innerHTML = "Classification : " + data.rated;
+        if (id_rated.innerHTML == "Not rated or unkown rating");
+          {id_rated.innerHTML = "Tous public"};
+        id_imdb_score.innerHTML =  "IMDB Score : " + data.imdb_score;
+        id_directors.innerHTML = "Réalisateur-s/Réalisatrice-s : " + data.directors;
+        id_actors.innerHTML = "Acteur-s/Actrice-s : " + data.actors;
+        id_duration.innerHTML = "Durée : " + data.duration + " min";
+        id_countries.innerHTML = "Pays d'origine : " + data.countries;
+        id_worldwide_gross_income.innerHTML = "Résultat au Box Office : " + data.worldwide_gross_income + " $";
+        if (id_worldwide_gross_income.innerHTML == "Résultat au Box Office : null $");
+          {id_worldwide_gross_income.innerHTML = "Résultat au Box Office : inconnu"};
+        id_description.innerHTML = "Synopsis : " + data.long_description;
       })
     } else {console.log("probleme de reponse")};
   })
   .catch(function(error) {console.log("probleme lors de l'operation fetch" + error.message)});
 }
 
-print_modal_info(url_best);

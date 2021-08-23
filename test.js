@@ -1,32 +1,8 @@
-/* --- FETCH --- */
+/* ---- déclaration des elements du DOM ---- */
+
 var best_img = document.getElementById("best_img");
 var best_title = document.getElementById("best_title");
 var best_desc = document.getElementById("best_desc");
-
-async function fetch_best(url_best) {
-  fetch(url_best)
-    .then((resp) => {
-      if (resp.ok) {
-        resp.json().then((data) => {
-          fetch(data.results[0].url)
-            .then((resp) => resp.json())
-            .then((data) => {
-              best_img.src = data.image_url;
-              best_title.innerHTML = data.title;
-              best_desc.innerHTML = data.description;
-            })
-            .catch((error) => {
-              console.log("probleme reponse fetch" + error.message);
-            });
-        });
-      } else {
-        console.log("probleme reponse url");
-      }
-    })
-    .catch((error) => {
-      console.log("probleme fetch" + error.message);
-    });
-}
 
 const url_best = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score";
 const liste_best = [
@@ -75,6 +51,37 @@ var liste_cat3 = [
   document.getElementById("action7"),
 ];
 
+
+
+/* --- FETCH --- */
+
+function fetch_best(url_best) {
+  fetch(url_best)
+    .then((resp) => {
+      if (resp.ok) {
+        resp.json().then((data) => {
+          fetch(data.results[0].url)
+            .then((resp) => resp.json())
+            .then((data) => {
+              best_img.dataset.idmovie = data.id;
+              best_img.src = data.image_url;
+              best_title.innerHTML = data.title;
+              best_desc.innerHTML = data.description;
+              
+            })
+            .catch((error) => {
+              console.log("probleme reponse fetch" + error.message);
+            });
+        });
+      } else {
+        console.log("probleme reponse url");
+      }
+    })
+    .catch((error) => {
+      console.log("probleme fetch" + error.message);
+    });
+}
+
 function fetch_cat(url, liste_best) {
   fetch(url)
     .then((resp) => {
@@ -83,6 +90,7 @@ function fetch_cat(url, liste_best) {
           for (let nb = 0; nb < 5; nb++) {
             liste_best[nb].src = data.results[nb].image_url;
             liste_best[nb].innerHTML = data.results[nb].url;
+            liste_best[nb].dataset.idmovie = data.results[nb].id;
           }
           fetch(data.next)
             .then((resp) => {
@@ -90,11 +98,9 @@ function fetch_cat(url, liste_best) {
                 resp.json().then((data) => {
                   for (let nb = 0; nb < 2; nb++) {
                     liste_best[nb + 5].src = data.results[nb].image_url;
+                    liste_best[nb + 5].dataset.idmovie = data.results[nb].id;
                     liste_best[nb + 5].innerHTML = data.results[nb].url;
                   }
-                  // then
-                  // liste catégorie liste_comédie[nb+5].src = data.results[nb].image_url;
-                  //etc ????????
                 });
               } else {
                 console.log("probleme reponse url");

@@ -20,12 +20,13 @@
       </nav>
     </header>
     <section>
-      <div id="best_modal">
+      <div id="best_modal" class="carousel__item">
         <img src="template-movie.png" alt="jacket best movie" id="best_img" />
         <h2 id="best_title">Titre</h2>
         <p id="best_desc">null</p>
       </div>
 
+      
       <h3>Top des meilleurs films</h3>
 
       <div class="carousel" id="carousel_1">
@@ -250,18 +251,24 @@
         </button>
       </div>
       <div class="modal">
-        <span class="close-btn">X</span>
+        
         <div class="modal-content">
-          <div id="id_image_url"></div>
+          <button  class="close-btn">FERMER</button>
+          <div><img id="id_image_url" src="template-movie.png" alt="okmodale"></div>
           <div id="id_title"></div>
           <div id="id_genres"></div>
           <div id="id_date_published"></div>
           <div id="id_rated"></div>
           <div id="id_imdbscore"></div>
-          Some text in the Modal Body Some other text... cndusivhfuivkhefbe
-          vueriqvhnefuipvheruibve vufivbeufivfnfui
+          <div id="id_directors"></div>
+          <div id="id_duration"></div>
+          <div id="id_countries"></div>
+          <div id="id_worldwide_gross_income"></div>
+          <div id="id_description"></div>
+          <div id="id_actors"></div>
         </div>
-      
+      </div>
+    
     </section>
 
     <script src="test.js"></script>
