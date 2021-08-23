@@ -3,7 +3,7 @@
 var modal = document.querySelector(".modal");
 var closebtn = document.querySelector(".close-btn");
 
-
+// CONTENU
 
 var id_image_url  = document.getElementById("id_image_url");
 var id_title  = document.getElementById("id_title");
@@ -70,7 +70,7 @@ function print_modal_info(url_best) {
         id_imdb_score.innerHTML =  "IMDB Score : " + data.imdb_score;
         id_directors.innerHTML = "Réalisateur-s/Réalisatrice-s : " + data.directors;
         id_actors.innerHTML = "Acteur-s/Actrice-s : " + data.actors;
-        id_duration.innerHTML = "Durée : " + data.duration + " min";
+        id_duration.innerHTML = "Durée : " + data.duration + " minutes";
         id_countries.innerHTML = "Pays d'origine : " + data.countries;
         id_worldwide_gross_income.innerHTML = "Résultat au Box Office : " + data.worldwide_gross_income + " $";
         if (id_worldwide_gross_income.innerHTML == "Résultat au Box Office : null $");
